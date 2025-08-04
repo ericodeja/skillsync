@@ -1,6 +1,11 @@
 from fastapi import FastAPI
+from app.api.v1.routes_user import router as user_routes
+
+
+
 
 app = FastAPI()
+app.include_router(user_routes, prefix='/users', tags=['Users'])
 
 
 @app.get('/')
