@@ -3,6 +3,7 @@ from sqlalchemy.orm import DeclarativeBase
 from app.core.config import settings
 
 
+
 if settings.DATABASE_URL is None:
     raise ValueError('DATABASE_URL is not set in the .env file')
 engine = create_engine(settings.DATABASE_URL)

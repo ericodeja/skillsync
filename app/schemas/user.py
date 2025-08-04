@@ -1,9 +1,10 @@
 from pydantic import BaseModel, EmailStr
 from datetime import date
 
+
 class UserBase(BaseModel):
     id: int
-    country: str
+    username: str
 
 class User(BaseModel):
     first_name: str
@@ -13,3 +14,5 @@ class User(BaseModel):
     date_of_birth: date
     country: str
     password:str
+    role: str
+

@@ -47,7 +47,7 @@ uvicorn app.main:app --reload
 ## Progress Tracker
 
 * [x] Initialize FastAPI project
-* [ ] Connect PostgreSQL with SQLAlchemy
+* [x] Connect PostgreSQL with SQLAlchemy
 * [ ] Create User model + CRUD operations
 * [ ] Implement JWT Authentication
 * [ ] Role & Scope-based access control

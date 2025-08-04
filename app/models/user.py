@@ -11,7 +11,7 @@ class User(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     first_name: Mapped[str] = mapped_column(String(50))
     last_name: Mapped[str] = mapped_column(String(50))
-    email: Mapped[Optional[str]] = mapped_column(String(150))
+    email: Mapped[Optional[str]] = mapped_column(String(150), unique=True)
     gender: Mapped[str] = mapped_column(String(7))
     date_of_birth: Mapped[datetime] = mapped_column(Date)
     country: Mapped[str]
@@ -19,6 +19,7 @@ class User(Base):
         TIMESTAMP, server_default=func.now())
     is_active: Mapped[bool] = mapped_column(default=True)
     password: Mapped[str]
+    role: Mapped[str] = mapped_column(default='User')
 
 
 

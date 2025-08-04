@@ -18,5 +18,5 @@ def create_user(user_data):
         )
         session.add(new_user)
         session.commit()
-        return UserBase(id=new_user.id, country=new_user.country)
+        return UserBase(id=new_user.id, username=new_user.first_name)
     

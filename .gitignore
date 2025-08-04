@@ -4,4 +4,4 @@ Scripts
 .env
 pyvenv.cfg
 .pyc
-alembic\versions
+alembic/versions/
