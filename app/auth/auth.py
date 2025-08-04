@@ -7,7 +7,7 @@ from app.models.user import User
 from app.schemas.user import UserBase
 from app.core.security import verify_password
 from app.core.dependencies import oauth2_scheme
-from jose import jwt, JWTError  # type: ignore
+from jose import jwt, JWTError
 from app.core.config import settings
 from typing import List
 
@@ -51,7 +51,7 @@ def decode_token(token):
 
 def get_current_user(security_scopes: SecurityScopes, token: str = Depends(oauth2_scheme)):
     payload = decode_token(token)
-    id = payload.get('id')
+    id = payload.get('user_id')
     token_scopes: List[str] = payload.get("scopes", [])
 
     credentials_exception = HTTPException(

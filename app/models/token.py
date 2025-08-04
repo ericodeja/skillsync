@@ -1,5 +1,5 @@
 from sqlalchemy import Integer, ForeignKey
-from sqlalchemy.orm import Session, Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column
 from app.db.base import Base
 
 class Token(Base):
@@ -7,6 +7,7 @@ class Token(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     token: Mapped[str]
+    expiry_time: Mapped[int]
     user_id: Mapped[int] = mapped_column(Integer, ForeignKey('users.id'))
 
 

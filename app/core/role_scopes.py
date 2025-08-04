@@ -1,25 +1,25 @@
 role_scope_map = {
     "User": [
         "read: profile",
+        "write: profile",
         "search: mentors",
         "match: mentors",
         "request: match",
-        "edit: profile"
     ],
     "Mentor": [
         "read: profile",
+        "write: profile",
         "search: mentors",
         "match: mentors",
         "request: match",
-        "edit: profile"
     ],
     "Admin": [
         "read: profile",
+        "write: profile",
         "search: mentors",
         "search: users",
         "admin: users",
         "admin: mentors",
-        "edit: profile"
     ]
 }
 
@@ -31,5 +31,5 @@ all_scopes = {
     "request:match": "Request a match",
     "admin:users": "Manage users",
     "admin:mentors": "Manage mentors",
-    "edit:profile": "Edit your profile"
+    "write:profile": "Write your profile"
 }
