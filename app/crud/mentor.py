@@ -1,6 +1,6 @@
 from app.db.base import engine
 from sqlalchemy.orm import Session
-from app.models.mentors import Mentor
+from app.models.mentor import Mentor
 
 
 def create_mentor(mentor_data):

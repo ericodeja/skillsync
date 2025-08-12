@@ -1,9 +1,8 @@
 from sqlalchemy import String, Date, TIMESTAMP, func
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from typing import Optional
-from app.db.base import Base, engine
+from app.db.base import Base
 from datetime import datetime
-
 
 
 class User(Base):
@@ -19,8 +18,15 @@ class User(Base):
         TIMESTAMP, server_default=func.now())
     is_active: Mapped[bool] = mapped_column(default=True)
     password: Mapped[str]
-    role: Mapped[str] = mapped_column(default='User')
+    role: Mapped[str] = mapped_column(default='Mentee')
+
+    token: Mapped['Token'] = relationship(back_populates='user', uselist=False, cascade='all, delete-orphan') # type: ignore
+
+    mentor_profile: Mapped[Optional['Mentor']] = relationship( # type: ignore
+        back_populates='user', uselist=False, cascade='all, delete-orphan')
+    
+    mentee_profile: Mapped[Optional['Mentee']] = relationship( # type: ignore
+        back_populates='user', uselist=False, cascade='all, delete-orphan')
 
 
-
-
+# Create relationship between user and other tables so deleting the user will delete all user information

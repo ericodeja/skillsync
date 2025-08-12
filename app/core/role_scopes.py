@@ -1,5 +1,5 @@
 role_scope_map = {
-    "User": [
+    "Mentee": [
         "read: profile",
         "write: profile",
         "search: mentors",
