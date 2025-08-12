@@ -48,9 +48,9 @@ uvicorn app.main:app --reload
 
 * [x] Initialize FastAPI project
 * [x] Connect PostgreSQL with SQLAlchemy
-* [ ] Create User model + CRUD operations
-* [ ] Implement JWT Authentication
-* [ ] Role & Scope-based access control
+* [x] Create User model + CRUD operations
+* [x] Implement JWT Authentication
+* [x] Role & Scope-based access control
 * [ ] Session booking system (MVP)
 * [ ] Smart matching algorithm
 * [ ] Real-time mentorship via WebSockets
