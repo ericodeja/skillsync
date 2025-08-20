@@ -11,3 +11,8 @@ class Mentor(BaseModel):
     skills: List[str]
     rating: float
     
+
+class MentorUpdate(BaseModel):
+    bio: Optional[str]
+    available_hours: Optional[dict]
+    skills: Optional[List[str]]

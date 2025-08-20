@@ -76,4 +76,4 @@ def get_current_user(security_scopes: SecurityScopes, token: str = Depends(oauth
         if not user:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User doesn't exist")
 
-        return UserBase(id=user.id, username = user.first_name)
+        return UserBase(id=user.id, username = user.first_name, role = user.role)

@@ -24,5 +24,5 @@ def login_route(form_data: OAuth2PasswordRequestForm = Depends()):
     return {'access_token': access_token, 'refresh_token': refresh_token, 'token_type': 'bearer'}
 
 @router.post('logout')
-def logout_route(user: UserBase = Security(get_current_user, scopes=["write: profile"])):
+def logout_route(user: UserBase = Security(get_current_user, scopes=["write:profile"])):
     delete_refresh_token(user.id)

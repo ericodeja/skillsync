@@ -18,7 +18,7 @@ class User(Base):
         TIMESTAMP, server_default=func.now())
     is_active: Mapped[bool] = mapped_column(default=True)
     password: Mapped[str]
-    role: Mapped[str] = mapped_column(default='Mentee')
+    role: Mapped[str]
 
     token: Mapped['Token'] = relationship(back_populates='user', uselist=False, cascade='all, delete-orphan') # type: ignore
 
@@ -29,4 +29,4 @@ class User(Base):
         back_populates='user', uselist=False, cascade='all, delete-orphan')
 
 
-# Create relationship between user and other tables so deleting the user will delete all user information
+
